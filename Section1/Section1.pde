@@ -39,11 +39,19 @@ class Visualizer {
     //Positive values are green and go above the line.
     int w = 0;
     for (int i = 0; i < values.length; i++){
-      if (values[i] > 0){
+      if (100 > values[i] && values[i] > 50){
         fill(0, 255, 0);
         rect(x+w, y+100 - values[i], 400/values.length, values[i]);
-        
       }
+      else if(50 > values[i] && values[i] > 0){
+        fill(255, 255, 0);
+        rect(x+w, y+100 - values[i], 400/values.length, values[i]);
+      }
+      else if(0 > values[i] && values[i] > -50){
+        fill(255, 165, 0);
+        rect(x+w, y+100 - values[i], 400/values.length, values[i]);
+      }
+        
       else{
         fill(255, 0, 0);
         rect(x+w, y+100 - values[i], 400/values.length, values[i]);
